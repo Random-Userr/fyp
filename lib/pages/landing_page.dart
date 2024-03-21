@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fyp/Games/gamesmain.dart';
 // import 'package:fyp/habit_tracker/pages/habit_tracker.dart';
 import 'package:fyp/pages/forum.dart'; // Import your Forum page here
 
@@ -24,7 +25,8 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    currentUser = FirebaseAuth.instance.currentUser; // Initialize currentUser here
+    currentUser =
+        FirebaseAuth.instance.currentUser; // Initialize currentUser here
   }
 
   @override
@@ -105,6 +107,10 @@ class _HomePageState extends State<HomePage> {
                   GestureDetector(
                     onTap: () {
                       // Add functionality for Play Games button
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => GamesListPage()));
                     },
                     child: Container(
                       padding: EdgeInsets.symmetric(
